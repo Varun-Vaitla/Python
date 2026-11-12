@@ -93,3 +93,39 @@
 
 
 
+"""
+Float Numbers
+this datatype is used to store decimal values 
+we can use both +ve and -ve values in folat
+folat is immutable
+we cannot store exact values of folat in python because it will be stored in binary format
+if we want to use them we need to uses Decimal modules
+"""
+a=10.5
+print(type(a))#<class 'float'>
+b=10
+print(type(b))#<class 'int'>
+print(type(float(b)))#<class 'float'>
+
+#we cannot convert string values into float because they are not number type
+
+# c="varun"
+# print(float(c))#ValueError:
+
+#we have specal float values
+
+a=float("inf")
+b=float("-inf")
+c=float("nan")
+print(a)#inf
+print(b)#-inf
+print(c)#nan
+
+add_a=0.1
+add_b=0.2
+print(add_a + add_b)#0.30000000000000004 see at the end we are getting 04 it is not correct to over come this we will be using Decimal module
+
+from decimal import Decimal
+a=Decimal("0.1")
+b=Decimal("0.2")
+print(a + b)#0.3
