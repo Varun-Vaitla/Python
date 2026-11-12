@@ -101,11 +101,11 @@ folat is immutable
 we cannot store exact values of folat in python because it will be stored in binary format
 if we want to use them we need to uses Decimal modules
 """
-a=10.5
-print(type(a))#<class 'float'>
-b=10
-print(type(b))#<class 'int'>
-print(type(float(b)))#<class 'float'>
+# a=10.5
+# print(type(a))#<class 'float'>
+# b=10
+# print(type(b))#<class 'int'>
+# print(type(float(b)))#<class 'float'>
 
 #we cannot convert string values into float because they are not number type
 
@@ -114,18 +114,40 @@ print(type(float(b)))#<class 'float'>
 
 #we have specal float values
 
-a=float("inf")
-b=float("-inf")
-c=float("nan")
-print(a)#inf
-print(b)#-inf
-print(c)#nan
+# a=float("inf")
+# b=float("-inf")
+# c=float("nan")
+# print(a)#inf
+# print(b)#-inf
+# print(c)#nan
 
-add_a=0.1
-add_b=0.2
-print(add_a + add_b)#0.30000000000000004 see at the end we are getting 04 it is not correct to over come this we will be using Decimal module
+# add_a=0.1
+# add_b=0.2
+# print(add_a + add_b)#0.30000000000000004 see at the end we are getting 04 it is not correct to over come this we will be using Decimal module
 
-from decimal import Decimal
-a=Decimal("0.1")
-b=Decimal("0.2")
-print(a + b)#0.3
+# from decimal import Decimal
+# a=Decimal("0.1")
+# b=Decimal("0.2")
+# print(a + b)#0.3
+
+##Complext Numbers
+#add to complex numbers
+a=2+3j
+b=4+5j
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+print(a.real)
+print(a.imag)
+
+"""
+(6+8j)
+(-2-2j)
+(-7+22j)
+(0.5609756097560976+0.0487804878048781j)
+2.0
+3.0
+"""
+
+
