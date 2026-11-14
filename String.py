@@ -58,60 +58,107 @@
 # #v.. count() => it is used to count the number of times the substring is repeted in the string and it return 0 if the substring is not there
 
 
-text = "python is easy and python is powerful"
+# text = "python is easy and python is powerful"
 
-print(text.find("python"))  # 0
-print(text.rfind("python")) # 19
-print(text.index("python")) # 0
-print(text.rindex("python"))# 19
-print(text.count("python"))# 2
+# print(text.find("python"))  # 0
+# print(text.rfind("python")) # 19
+# print(text.index("python")) # 0
+# print(text.rindex("python"))# 19
+# print(text.count("python"))# 2
 
-## removing spaces and characters method
+# ## removing spaces and characters method
 
-#i.. strip()
-sample = "  python  "
-sample1="##python##"
-sample2 = "#  python  "
-sample3="ppythonp"
-print(sample.strip())
-print(sample1.strip("#"))
-print(sample3.strip('py'))
+# #i.. strip()
+# sample = "  python  "
+# sample1="##python##"
+# sample2 = "#  python  "
+# sample3="ppythonp"
+# print(sample.strip())
+# print(sample1.strip("#"))
+# print(sample3.strip('py'))
 
-print("...........")
-print(sample.lstrip())
-print(sample1.lstrip('#'))
-print("...........")
-print(sample.rstrip())
-print(sample1.rstrip('#'))
-print("...........")
-sample4="premidsuff"
-print(sample4.removeprefix("pre"))
-print(sample4.removesuffix("suff"))
+# print("...........")
+# print(sample.lstrip())
+# print(sample1.lstrip('#'))
+# print("...........")
+# print(sample.rstrip())
+# print(sample1.rstrip('#'))
+# print("...........")
+# sample4="premidsuff"
+# print(sample4.removeprefix("pre"))
+# print(sample4.removesuffix("suff"))
 
-#sting replace methods
-#i.. replace()
-title="this is an python class"
-titleResult = title.replace("a","#")
-titleResult1 = title.replace("a","#",1)
-print(title)
-print(titleResult)
-print(titleResult1)
+# #sting replace methods
+# #i.. replace()
+# title="this is an python class"
+# titleResult = title.replace("a","#")
+# titleResult1 = title.replace("a","#",1)
+# print(title)
+# print(titleResult)
+# print(titleResult1)
 
-#NOTE: using replace we can replace single char or substing at a time but we cannot modify multiple cahr at a time so we need to use marktrans and translate
+# #NOTE: using replace we can replace single char or substing at a time but we cannot modify multiple cahr at a time so we need to use marktrans and translate
 
-#ii.. maketrans() and translate()
-subtitle="i want to become python developer"
-valueToChange={"a":"1" ,"e":"2", "i":"3", "o":"4", "u":"5"}
-#single parameter
-table1=subtitle.maketrans(valueToChange)
-# two parameter
-table2=subtitle.maketrans("aeiou","AEIOU")
-#3parameter
-table3=subtitle.maketrans("aeiou","AEIOU","pd")
-print(table1)#{97: 1, 101: 2, 105: 3, 111: 4, 117: 5} unicode values this the table
-result1=subtitle.translate(table1)
-result2=subtitle.translate(table2)
-result3=subtitle.translate(table3)
-print(result1)#3 w1nt t4 b2c4m2 pyth4n d2v2l4p2r
-print(result2)#I wAnt tO bEcOmE pythOn dEvElOpEr
-print(result3)#I wAnt tO bEcOmE ythOn EvElOEr
+# #ii.. maketrans() and translate()
+# subtitle="i want to become python developer"
+# valueToChange={"a":"1" ,"e":"2", "i":"3", "o":"4", "u":"5"}
+# #single parameter
+# table1=subtitle.maketrans(valueToChange)
+# # two parameter
+# table2=subtitle.maketrans("aeiou","AEIOU")
+# #3parameter
+# table3=subtitle.maketrans("aeiou","AEIOU","pd")
+# print(table1)#{97: 1, 101: 2, 105: 3, 111: 4, 117: 5} unicode values this the table
+# result1=subtitle.translate(table1)
+# result2=subtitle.translate(table2)
+# result3=subtitle.translate(table3)
+# print(result1)#3 w1nt t4 b2c4m2 pyth4n d2v2l4p2r
+# print(result2)#I wAnt tO bEcOmE pythOn dEvElOpEr
+# print(result3)#I wAnt tO bEcOmE ythOn EvElOEr
+
+
+## splitting and joining methods
+
+#1.. split() => this method will divide the string into list of elements based on the separator
+
+relation = "varun and sandhya are brother and sisters"
+result = relation.split()
+print(result)#['varun', 'and', 'sandhya', 'are', 'brother', 'and', 'sisters'] by default whitespace is separator
+
+relation1="varun#and#sandhya#are#brothers"
+result1=relation1.split("#")
+print(result1)#['varun', 'and', 'sandhya', 'are', 'brothers']
+
+result2= relation1.split('-')
+print(result2)#['varun#and#sandhya#are#brothers']
+
+relation2="this?is?to?check"
+result4=relation2.rsplit("?",2)
+print(result4)#['this?is', 'to', 'check']
+
+##ii.. splitlines()
+content="my name is varun \n my age is 25 \n my place is dvg"
+result5=content.splitlines()
+result6=content.splitlines(keepends=True)
+print(result5)#['my name is varun ', ' my age is 25 ', ' my place is dvg']
+print(result6)#['my name is varun \n', ' my age is 25 \n', ' my place is dvg']
+
+#iii.. join()
+languages=["kannada","telugu","english"]
+result7="?".join(languages)
+# print(result7)#kannada telugu english
+print(result7)#kannada?telugu?english
+
+#iv.. partition() and rpartition() this methods are used to divide the sting into 3 parts and return tuple based on sepatar
+
+friends = "varun naveen are childhood friends and manoj is college friend and uday is j-spider friend"
+f1=friends.partition("and")
+f2= friends.rpartition("and")
+print(f1)
+print(f2)
+"""
+('varun naveen are childhood friends ', 'and', ' manoj is college friend and uday is j-spider friend')
+('varun naveen are childhood friends and manoj is college friend ', 'and', ' uday is j-spider friend')
+"""
+
+
