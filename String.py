@@ -22,3 +22,19 @@ print(add)
 
 message3="my name is %a and my age is %d ...."%(name,age)
 print(message3)
+
+##string methods###
+ 
+ ##1. case methods
+sample_text="i am am Python Developer"
+print(sample_text.upper())
+print(sample_text.lower())
+print(sample_text.capitalize())
+print(sample_text.title())
+print(sample_text.swapcase())
+
+"""I AM AM PYTHON DEVELOPER
+i am am python developer
+I am am python developer
+I Am Am Python Developer
+I AM AM pYTHON dEVELOPER"""
