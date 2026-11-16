@@ -162,3 +162,103 @@ print(f2)
 """
 
 
+##format_map(): it is used to display object details in string
+
+students=[{"id":1,
+           "name":"varun",
+           "age":25,
+           "place":"DVG"
+           },
+           {"id":2,
+           "name":"Manoj",
+           "age":27,
+           "place":"BANG"
+           }]
+
+for student in students:
+ result= "student name: {name}, and his age is:{age} and he is from {place}".format_map(student)
+ print(result)
+
+### Boolean methods of string
+ string1="varun"
+ string2="12345"
+ string3="varun12345"
+ string4="varun@#$123"
+
+ #1.. isalpha()
+ print(string1.isalpha())
+ print(string2.isalpha())
+ print(string3.isalpha())
+ print(string4.isalpha())
+"""
+True
+False
+False
+False"""
+
+#2..isdigit()
+print(string1.isdigit())
+print(string2.isdigit())
+print(string3.isdigit())
+print(string4.isdigit())
+"""
+False
+True
+False
+False
+"""
+
+#3.. isdecimal()
+
+string5="23.4"
+print("...................")
+print(string1.isdecimal())
+print(string2.isdecimal())
+print(string3.isdecimal())
+print(string4.isdecimal())
+print(string5.isdecimal())
+"""
+False
+True
+False
+False
+False
+"""
+#4 isidentifier()
+print("...................")
+print(string1.isidentifier())
+print(string2.isidentifier())
+print(string3.isidentifier())
+print(string4.isidentifier())
+print(string5.isidentifier())
+"""
+Rule	Example	Result
+Can contain letters	                            "student"	True
+Can contain numbers after the first character	"student123"	True
+Can start with underscore                      	"_name"	True
+Cannot start with a number	                    "123name"	False
+Cannot contain spaces	                        "student name"	False
+Cannot contain hyphens	                        "student-name"	False
+"""
+
+##Alignement and formating methods
+#i.. center()
+align_str="python"
+result=align_str.center(12)
+result1=align_str.center(12,"*")
+print(result)#   python   
+print(result1)#***python***
+
+#ii.. ljust()
+res1=align_str.ljust(12,"|")
+res2=align_str.rjust(12,"#")
+print(res1)#python||||||
+print(res2)#######python
+
+#iii.. zfill()
+num="201"
+num1="-201"
+zfill_num=num.zfill(5)
+zfill_num1=num1.zfill(6)
+print(zfill_num)#00201
+print(zfill_num1)#-00201
