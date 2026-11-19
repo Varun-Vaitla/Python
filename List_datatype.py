@@ -44,3 +44,23 @@ print(second_half)#[6, 7, 8, 9, 10]
 empty_list=[]
 print(empty_list)#[]
 
+#9.. 2 lists
+text="varun"
+one=["varun","naveen","Ajay"]
+two=[1,2,3,4,5]
+mix=[one ,two]
+print(mix)#[['varun', 'naveen', 'Ajay'], [1, 2, 3, 4, 5]]
+mix1= one + two
+print(mix1)#['varun', 'naveen', 'Ajay', 1, 2, 3, 4, 5]
+# mix2=one + text
+# print(mix2)
+
+
+#list built-in methods 
+
+#inserting methods
+#1.. append() => this method is used to add one element at end 
+numbers=[10,20,30,40]
+numbers.append(50)
+print(numbers)#[10, 20, 30, 40, 50] 
+ 
