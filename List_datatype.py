@@ -63,4 +63,6 @@ print(mix1)#['varun', 'naveen', 'Ajay', 1, 2, 3, 4, 5]
 numbers=[10,20,30,40]
 numbers.append(50)
 print(numbers)#[10, 20, 30, 40, 50] 
+
+
  
